@@ -8,7 +8,7 @@ from ..redis_spiders import ValidatorRedisSpider
 from .base import BaseValidator
 
 
-class ZhiHuValidator(BaseValidator, ValidatorRedisSpider):
+class JianyuValidator(BaseValidator, ValidatorRedisSpider):
     """This validator check the liveness of zhihu proxy resources"""
     name = 'jianyu360'
     urls = [

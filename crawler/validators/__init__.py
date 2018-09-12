@@ -14,11 +14,11 @@ from .httpbin import (
     HttpBinInitValidator, HttpValidator,
     HttpsValidator)
 from .zhihu import ZhiHuValidator
-from .weibo import WeiBoValidator
+from .jianyu360 import JianyuValidator
 
 
 all_validators = [
     HttpBinInitValidator, HttpValidator,
-    HttpsValidator, WeiBoValidator,
+    HttpsValidator, JianyuValidator,
     ZhiHuValidator
 ]
