@@ -14,6 +14,8 @@ from config.settings import (
     SPEED_WEIBO_QUEUE, TEMP_ZHIHU_QUEUE,
     VALIDATED_ZHIHU_QUEUE, TTL_ZHIHU_QUEUE,
     SPEED_ZHIHU_QUEUE, VALIDATED_JIANYU360_QUEUE, TEMP_JIANYU360_QUEUE,
+    TEMP_SOGOU_QUEUE, VALIDATED_SOGOU_QUEUE,
+    TTL_SOGOU_QUEUE, SPEED_SOGOU_QUEUE,
     TTL_JIANYU360_QUEUE, SPEED_JIANYU360_QUEUE)
 
 
@@ -377,6 +379,13 @@ VALIDATOR_TASKS = [
         'internal': 20,
         'enable': 1,
     },
+    {
+        'name': 'sogou',
+        'task_queue': TEMP_SOGOU_QUEUE,
+        'resource': VALIDATED_SOGOU_QUEUE,
+        'internal': 20,
+        'enable': 1,
+    },
 ]
 
 # crawlers will fetch tasks from the following queues
@@ -392,7 +401,8 @@ TEMP_TASK_MAPS = {
     'init': INIT_HTTP_QUEUE,
     'http': TEMP_HTTP_QUEUE,
     'https': TEMP_HTTPS_QUEUE,
-    'jianyu360': TEMP_JIANYU360_QUEUE
+    'jianyu360': TEMP_JIANYU360_QUEUE,
+    'sogou': TEMP_SOGOU_QUEUE
 }
 
 
@@ -401,19 +411,22 @@ TEMP_TASK_MAPS = {
 SCORE_MAPS = {
     'http': VALIDATED_HTTP_QUEUE,
     'https': VALIDATED_HTTPS_QUEUE,
-    'jianyu360': VALIDATED_JIANYU360_QUEUE
+    'jianyu360': VALIDATED_JIANYU360_QUEUE,
+    'sogou': VALIDATED_SOGOU_QUEUE
 }
 
 # validator scheduler and clients will fetch proxies from the following queues which are verified recently
 TTL_MAPS = {
     'http': TTL_HTTP_QUEUE,
     'https': TTL_HTTPS_QUEUE,
-    'jianyu360': TTL_JIANYU360_QUEUE
+    'jianyu360': TTL_JIANYU360_QUEUE,
+    'sogou': TTL_SOGOU_QUEUE
 }
 
 SPEED_MAPS = {
     'http': SPEED_HTTP_QUEUE,
     'https': SPEED_HTTPS_QUEUE,
-    'jianyu360': SPEED_JIANYU360_QUEUE
+    'jianyu360': SPEED_JIANYU360_QUEUE,
+    'sogou': SPEED_SOGOU_QUEUE
 }
 
