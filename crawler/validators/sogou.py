@@ -12,11 +12,11 @@ class SoGouValidator(BaseValidator, ValidatorRedisSpider):
     """This validator check the liveness of zhihu proxy resources"""
     name = 'sogou'
     urls = [
-        'http://weixin.sogou.com/'
+        'http://weixin.sogou.com/weixin?type=1&query=yonsuper&ie=utf8&s_from=input&_sug_=y&_sug_type_='
     ]
     task_queue = TEMP_SOGOU_QUEUE
     score_queue = VALIDATED_SOGOU_QUEUE
     ttl_queue = TTL_SOGOU_QUEUE
     speed_queue = SPEED_SOGOU_QUEUE
-    success_key = '搜狗微信'
+    success_key = '用友云'
 
